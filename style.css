@@ -1,0 +1,383 @@
+html {
+    font-family: 'Space Mono', monospace;
+    font-size: 10px;
+    font-weight: 700;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    height: 100%;
+    margin: 0;
+    background: hsl(185, 41%, 84%);
+}
+
+.logo {
+    margin-bottom: 50px;
+}
+
+.wrapper {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    padding: 30px;
+
+    background: hsl(0, 0%, 100%);
+    border-radius: 20px;
+}
+
+.input {
+    box-sizing: border-box;
+    width: 49%;
+    padding: 10px;
+}
+
+input, label, button {
+    font-family: 'Space Mono', monospace;
+    
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+}
+
+label {
+    margin: 10px 0;
+
+    font-size: 14px;
+    color: hsl(183, 100%, 15%);
+}
+
+input {
+    padding: 10px 20px;
+
+
+    font-size: 16px;
+    text-align: right;
+    background: hsl(189, 41%, 97%) url(images/icon-dollar.svg) no-repeat left 20px center / 10px;
+    border-radius: 5px;
+    border: 3px solid transparent;
+    outline: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+input:focus {
+    border: 2px solid hsl(172, 67%, 45%);
+}
+
+button {
+    padding: 10px 0;
+    font-size: 16px;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.bill,
+.tip-option,
+.number-of-people {
+    margin-bottom: 20px;
+}
+
+#B,
+#N {
+    position: relative;
+}
+
+#B span,
+#N span {
+    display: block;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    font-size: 13px;
+    color: hsl(30, 100%, 50%);
+}
+
+.tip-option span {
+    display: block;
+    height: 20px;
+    margin-top: 10px;
+    
+    font-size: 13px;
+    color: hsl(30, 100%, 50%);
+}
+
+#bill:invalid,
+#pplNmbr:invalid,
+#custom:invalid {
+    border-color: hsl(30, 100%, 50%);
+}
+
+.percentage * {
+    display: block;
+}
+
+.percentage {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.percentage button {
+    background: hsl(183, 100%, 15%);
+    color: hsl(0, 0%, 100%);
+    border-radius: 5px;
+    border: 3px solid transparent;
+}
+
+.percentage .active {
+    background: hsl(172, 67%, 45%);
+    color: hsl(183, 100%, 15%);
+}
+
+.percentage button:hover {
+    color: hsl(183, 100%, 15%);
+    background: hsl(175, 45%, 75%);
+}
+
+#custom {
+    text-align: center;
+    background: hsl(189, 41%, 97%);
+}
+
+.output {
+    position: relative;
+    box-sizing: border-box;
+    width: 49%;
+    height: 100%;
+
+    padding: 30px;
+    background: hsl(183, 100%, 15%);
+    border-radius: 15px;
+}
+
+.amount {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.label {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    color: hsl(189, 41%, 97%)
+}
+
+.label span {
+    display: block;
+    font-size: 10px;
+
+    color: hsl(184, 14%, 56%);
+}
+
+.total {
+    margin: 0;
+    padding: 0;
+
+    font-size: 40px;
+    color: hsl(172, 67%, 45%);
+}
+
+.reset {
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px;
+}
+
+#reset{
+    font-size: 20px;
+    color: hsl(183, 100%, 15%);
+    background: hsl(172, 67%, 45%);
+    border: none;
+    border-radius: 10px;
+}
+
+.disable {
+}
+
+#reset:hover {
+    background: hsl(175, 45%, 75%);
+}
+
+
+@media screen and (max-width: 400px) {
+    
+    html {
+        height: unset
+    }
+
+    .logo {
+        margin: 10vh 0;
+    }
+
+    .wrapper {
+        width: 100%;
+        flex-direction: column;
+
+        border-radius: 20px 20px 0 0 ;
+    }
+
+    .reset {
+        position: static;
+        margin-top: 30px;
+        padding: 0;
+    }
+
+    .input,
+    .output {
+        width: 100%;
+    }
+
+    #bill,
+    #pplNmbr {
+        margin-top: 5px;
+    }
+
+    input {
+        font-size: 14px;
+    }
+
+    #custom {
+        padding: 10px;
+    }
+
+    #B span,
+    #N span,
+    .tip-option span {
+        font-size: 10px;
+    }
+
+    .total {
+        font-size: 35px;
+    }
+
+}
+
+@media screen and (min-width: 401px) and (max-width: 600px) {
+    html {
+        height: unset
+    }
+
+    .logo {
+        margin: 10vh 0;
+    }
+
+    .wrapper {
+        width: 100%;
+        flex-direction: column;
+
+        border-radius: 20px 20px 0 0 ;
+    }
+
+    .reset {
+        position: static;
+        margin-top: 30px;
+        padding: 0;
+    }
+
+    .input,
+    .output {
+        width: 100%;
+    }
+
+    #bill,
+    #pplNmbr {
+        margin-top: 5px;
+    }
+
+}
+
+@media screen and (min-width: 601px) and (max-width: 800px) {
+    
+    html {
+        height: unset
+    }
+
+    .logo {
+        margin: 50px 0;
+    }
+
+    .wrapper {
+        width: 80%;
+        flex-direction: column;
+    }
+
+    .reset {
+        position: static;
+        margin-top: 30px;
+        padding: 0;
+    }
+
+    .input,
+    .output {
+        width: 100%;
+    }
+
+    #bill,
+    #pplNmbr {
+        margin-top: 5px;
+    }
+}
+
+@media screen and (min-width: 801px) and (max-width: 1000px) {
+
+    .wrapper {
+        width: 90%;
+    }
+
+    #custom {
+        padding: 10px;
+    }
+
+    #B span,
+    #N span,
+    .tip-option span {
+        font-size: 11px;
+    }
+
+}
+
+@media screen and (min-width: 1001px) and (max-width: 1100px) {
+
+    .wrapper {
+        width: 80%;
+    }
+
+}
+
+@media screen and (min-width: 1101px) and (max-width: 1300px) {
+
+    .wrapper {
+        width: 70%;
+    }
+
+}
+
+@media screen and (min-width: 1301px) and (max-width: 1400px) {
+
+    .wrapper {
+        width: 60%;
+    }
+
+}
